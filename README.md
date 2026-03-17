@@ -1,3 +1,21 @@
+# ahk Shift IME
+```
+#IfWinNotActive ahk_exe VirtualBoxVM.exe
+; 左Shiftが単体で押されたら、直接入力 → LAlt
+~LShift Up::
+if (A_PriorKey = "LShift") {
+    Send, {vk1A}
+}
+Return
+
+; 右Shiftが単体で押されたら、ひらがな入力 → RAlt
+~RShift Up::
+if (A_PriorKey = "RShift") {
+    Send, {vk16}
+}
+Return
+```
+
 # KQL
 - 特定の文字列をパスに含むプロセス起動
 ```
